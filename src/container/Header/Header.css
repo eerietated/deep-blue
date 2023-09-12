@@ -1,0 +1,19 @@
+.navbar > .container, .navbar > .container-fluid, .navbar > .container-lg, .navbar > .container-md, .navbar > .container-sm, .navbar > .container-xl, .navbar > .container-xxl {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-nav {
+  width: 100%;
+  background-color: aqua;
+  justify-content: space-around;
+}
+.navbar-nav .nav-link {
+  color: blue;
+}
+.navbar-nav .nav-link .active .show {
+  color: red;
+}/*# sourceMappingURL=Header.css.map */

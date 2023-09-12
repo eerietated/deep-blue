@@ -1,0 +1,189 @@
+@import './src/utilities/variables';
+
+.navbar {
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: inherit;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        position: relative;
+    }
+}
+.head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    .head-logo {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 0.8;
+    }
+    .head-box {
+        display: none;
+        border: 2px dashed $mainColor;
+        font-size: $tertiaryHeadline;
+        padding: 5px 20px;
+        max-width: 180px;
+        font-weight: 300;
+        line-height: 1;
+        text-align: center;
+    }
+}
+.nav-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    .split {
+        background-color: $mainColor;
+        height: 2px;
+        flex: 1 1;
+    }
+    .sub-text {
+        text-align: center;
+        font-size: $navText;
+        font-weight: 300;
+    }
+}
+button.navbar-toggler {
+    border-radius: 0;
+    position:absolute;
+    top: 15px;
+    right: 5px;
+    border: 2px solid $mainColor;
+    padding: 0 1px;
+    .navbar-toggler-icon {
+        mask: var(--bs-navbar-toggler-icon-bg);
+        background-color: $mainColor;
+        background-image: none;
+    }
+}
+button.navbar-toggler:hover {
+    background-color: $mainColor;
+    .navbar-toggler-icon {
+        background-color: $secondaryColor;
+    }
+}
+.navbar-toggler .collapsed {
+    display: flex;
+    justify-content: baseline;
+}
+.navbar-expand-lg .navbar-collapse {
+    width: 100%
+}
+.navbar-nav {
+    width: 100%;
+    border-top: 2px solid $mainColor;
+    border-bottom: 5px double $mainColor;
+    justify-content: space-around;
+    .nav-link {
+        color: $mainColor;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-link:hover{
+        color: $secondaryColor;
+        background-color: $mainColor;
+    }
+    .dropdown {
+        width: 100%;
+        .dropdown-toggle {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            border: 0;
+            background-color: transparent;
+            color: $mainColor;
+            text-decoration: none;
+            padding: 8px 0;
+        }
+        .dropdown-toggle:hover {
+            background-color: $mainColor;
+            color: $secondaryColor;
+        }
+    }
+    .show.dropdown {
+        background-color: #000;
+        .dropdown-toggle {
+            color: $secondaryColor;
+        }
+    }
+    .nav-item {
+        width: 100%;
+        color: $secondaryColor;
+    }
+}
+
+#bootstrap-override {
+    .navbar-nav {
+        .nav-link.active:not(.dropdown-link) {
+            color: $secondaryColor;
+            background-color: #000;
+        }
+        .dropdown-link.active:hover {
+            color: $secondaryColor;
+        }
+        .nav-link.show {
+            color: $secondaryColor;
+            background-color: $mainColor;
+        }
+    }
+    .dropdown-menu {
+        width: 100%;
+        background-color: $secondaryColor;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        // top: 39px;
+        .dropdown-item {
+            padding: 0;
+        }
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+    }
+    // .dropdown:hover .dropdown-menu {
+    //     display: block;
+    // }
+    .offcanvas.offcanvas-end {
+        background-color: $secondaryColor;
+    }
+    // .offcanvas-header {
+
+    // }
+    // .offcanvas-body {
+
+    // }
+}
+
+
+@media(min-width: 768px) {
+    .head {
+        justify-content: space-between;
+        .head-box {
+            display: flex;
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .head {
+        .head-logo {
+            font-size: 78px;
+        }
+        .head-box {
+            font-size: $secondaryHeadline;
+            padding: 5px 30px;
+            max-width: 220px;
+        }
+    }
+}

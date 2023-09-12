@@ -1,0 +1,98 @@
+@import './src/utilities/variables';
+
+.footer-body {
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid $mainColor;
+    gap: 10px;
+}
+.footer-logo {
+    font-size: $primaryHeadline;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+}
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 30px;
+    .col-4 {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        background-color: $mainColor;
+        color: $secondaryColor;
+        padding: 20px;
+        gap: 30px;
+        .form-group {
+            width: 100%;
+        }
+        .form-control {
+            background-color: transparent;
+            border-radius: 0;
+            border: 2px solid $secondaryColor;
+            color: $secondaryColor;
+        }
+        .form-control::placeholder {
+            color: $secondaryColor;
+        }
+    }
+    .nav-link:hover {
+        text-decoration: underline;
+    }
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.footer-icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    a {
+        color: $mainColor;
+    }
+}
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $metaText;
+    border-top: 1px dashed $mainColor;
+    padding: 15px;
+}
+
+@media(min-width: 576px) {
+    .footer-content {
+        flex-direction: row;
+        .footer-links {
+            align-items: baseline;
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .footer-content {
+        .footer-logo {
+            text-align: start;
+        }
+        .col-4 {
+            width: auto;
+        }
+        form {
+            flex-direction: row;
+            align-items:flex-end;
+        }
+    }
+}
