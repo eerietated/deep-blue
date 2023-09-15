@@ -88,7 +88,7 @@ const ArticlePage = (props: Props) => {
                         </p>
                     </Row>
                 </Col>
-                <Col xs={3}>
+                <Col>
                     <div className="article-aside">
                         <h4>Related Articles</h4>
                         <ul>

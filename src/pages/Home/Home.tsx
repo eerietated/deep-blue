@@ -37,7 +37,7 @@ const Home = ({ favorites, toggleFavorite }: Props) => {
     const getArticlesForCategory = (category: string) => {
         return articlesArray
             .filter((article) => article.category === category)
-            .slice(0, 3)
+            .slice(0, 4)
     }
 
     return (
@@ -95,21 +95,16 @@ const Home = ({ favorites, toggleFavorite }: Props) => {
                 {categories.map((category) => (
                     <div key={category} className="category-section">
                         <h4>{category}</h4>
-                        <Row>
+                        <CardGroup>
                             {getArticlesForCategory(category).map((article) => (
-                                <Col key={article.id} md={4}>
-                                    <CardGroup>
-                                        <ArticleCard
-                                            article={article}
-                                            isFavorite={favorites.includes(
-                                                article.id
-                                            )}
-                                            toggleFavorite={toggleFavorite}
-                                        />
-                                    </CardGroup>
-                                </Col>
+                                <ArticleCard
+                                    key={article.id}
+                                    article={article}
+                                    isFavorite={favorites.includes(article.id)}
+                                    toggleFavorite={toggleFavorite}
+                                />
                             ))}
-                        </Row>
+                        </CardGroup>
                         <Link to={`/category/${category}`}>
                             <Button variant="link">More</Button>
                         </Link>
