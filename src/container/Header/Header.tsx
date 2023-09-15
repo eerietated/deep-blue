@@ -1,4 +1,4 @@
-import { Container, Navbar, Offcanvas } from 'react-bootstrap'
+import { Container, Navbar } from 'react-bootstrap'
 import './Header.scss'
 import Menu from 'components/Menu/Menu'
 import Head from 'components/Head/Head'
